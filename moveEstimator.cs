@@ -18,13 +18,13 @@ class Program
       {
 
         // We declare a constant integer to represent the base rate charge
-        const int base_rate = 200;
+        const double base_rate = 200;
 
         // We declare a constant integer to represent the mile rate charge
-        const int mile_price = 2;
+        const double mile_price = 2;
 
         // We declare a constant integer to represent the hourly rate charge
-        const int hour_price = 150;
+        const double hour_price = 150;
 
           // We interact with the customer to discover the amount of hours they will be travelling
           Console.WriteLine("How many hours are you traveling?");
@@ -35,21 +35,21 @@ class Program
           var mile = Console.ReadLine();
         
           // We test the input to ensure it is an integer
-          int time_test;
+          double time_test;
         
           // We test the input to ensure it is an integer
-          int mile_test;
+          double mile_test;
            
         
           
 
           // if we can parse both inputs as integers, we can calculate the total cost of the move
-          if (int.TryParse(mile, out mile_test) && int.TryParse(time, out time_test))
+          if (double.TryParse(mile, out mile_test) && double.TryParse(time, out time_test))
           {
             // We write the calcuation to an integer to be represented in a string
-            int final_price = base_rate + (mile_test * mile_price) + (time_test * hour_price);
+            double final_price = base_rate + (mile_test * mile_price) + (time_test * hour_price);
             // We deliver the final price to the customer
-            Console.WriteLine("{0} miles + {1} hours + base rate = {2}", mile_test, time_test, final_price);           
+            Console.WriteLine("This would be how much you owe = ${0:F2}", final_price);           
           }
         else /* if we can not parse both inputs as integers we have to politely tell the
                   customer to go pound sand. */
